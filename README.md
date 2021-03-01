@@ -30,4 +30,5 @@ php spark db:seed TruckSeeder
 
 ```
 
-
+## Postman Collection URL
+https://documenter.getpostman.com/view/4752784/TWDdjZAX
