@@ -53,6 +53,13 @@ class BaseController extends Controller
 		// E.g.: $this->session = \Config\Services::session();
 	}
 
+    /**
+     * Get Success or Fail Response (Formatted way )
+     * @param $data
+     * @param $message
+     * @param $status
+     * @return ResponseInterface
+     */
     public function successFailResponse($data, $message, $status ): ResponseInterface
     {
         $responseBody = [
@@ -67,6 +74,12 @@ class BaseController extends Controller
     }
 
 
+    /**
+     * Get Response
+     * @param array $responseBody
+     * @param int $code
+     * @return ResponseInterface
+     */
     public function getResponse(array $responseBody, int $code = ResponseInterface::HTTP_OK)
     {
         return $this
@@ -75,6 +88,11 @@ class BaseController extends Controller
             ->setJSON($responseBody);
     }
 
+    /**
+     * Return request input (in formatted array )
+     * @param IncomingRequest $request
+     * @return mixed
+     */
     public function getRequestInput(IncomingRequest $request){
         $input = $request->getPost();
         if (empty($input)) {
@@ -84,6 +102,13 @@ class BaseController extends Controller
         return $input;
     }
 
+    /**
+     * Validate Incoming Request
+     * @param $input
+     * @param array $rules
+     * @param array $messages
+     * @return bool
+     */
     public function validateRequest($input, array $rules, array $messages =[]){
         $this->validator = Services::Validation()->setRules($rules);
         // If you replace the $rules array with the name of the group

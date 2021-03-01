@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\StatusModel;
 use App\Models\TruckModel;
-use CodeIgniter\HTTP\Response;
 use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
 
