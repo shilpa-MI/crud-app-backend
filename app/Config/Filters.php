@@ -19,7 +19,8 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
-	];
+        'cors'     => \App\Filters\Cors::class,
+    ];
 
 	/**
 	 * List of filter aliases that are always
@@ -29,6 +30,7 @@ class Filters extends BaseConfig
 	 */
 	public $globals = [
 		'before' => [
+		    'cors'
 			// 'honeypot',
 			// 'csrf',
 		],

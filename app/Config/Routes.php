@@ -52,7 +52,6 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->options('(:any)', 'TruckController::options'); //one options method for all routes.
 
 // Truck Module Routes
 $routes->get('trucks', 'TruckController::getAllTruck');
