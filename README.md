@@ -1,5 +1,10 @@
 ## CRUD App Backend (CodeIgniter 4 , MySql )
 
+## Project setup
+```
+composer install
+
+```
 
 ## Setup
 
