@@ -11,7 +11,12 @@ composer install
 Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
 
-## Run follwing commnds for migration and database seeding
+```
+cp env .env
+
+```
+
+## Run follwing commnds for Migration and database seeding
 ```
 php spark migrate
 ```
