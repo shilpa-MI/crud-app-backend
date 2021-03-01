@@ -20,13 +20,13 @@ class TruckController extends BaseController
         $uri = $this->request->uri;
         $queryParam = $uri->getQuery();
         parse_str($queryParam, $params);
-        $nextPage = $params && $params['page'] ? $params['page'] : 1;
-        $perPage = $params && $params['per_page'] ? $params['per_page'] : BaseController::$perPage;
+        $nextPage = $params && isset($params['page']) ? $params['page'] : 1;
+        $perPage = $params && isset($params['per_page']) ? $params['per_page'] : BaseController::$perPage;
         $model = new TruckModel();
-        $name = $params && $params['name'] ? $params['name'] : '';
-        $city = $params && $params['city'] ? $params['city'] : '';
-        $state = $params && $params['state'] ? $params['state'] : '';
-        $zip = $params && $params['zip'] ? $params['zip'] : '';
+        $name = $params && isset($params['name']) ? $params['name'] : '';
+        $city = $params && isset($params['city']) ? $params['city'] : '';
+        $state = $params && isset($params['state']) ? $params['state'] : '';
+        $zip = $params && isset($params['zip']) ? $params['zip'] : '';
 
         $trucks = $model->where('status_id !=', StatusModel::$DELETED)
                         ->like('name' , $name)
